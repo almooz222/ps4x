@@ -1,107 +1,201 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>PS4 9.00 FW Host v3.0 by GamerHack | Automatic Exploitation</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>PS4 9.00 FW Host v3.0 by AlawiM7 | Automatic Exploitation</title>
 <link rel="stylesheet" href="../style.css">
 <script src="int64.js"></script>
 <script src="rop.js"></script>
 <script src="kexploit.js"></script>
 <script src="webkit.js"></script>
+<style>
+:root{--blue:#00adef;--blue-dim:rgba(0,173,239,.15);--green:#00ff88;--white:#e8f4ff;--darker:#02060e}*{box-sizing:border-box;margin:0;padding:0}html,body{width:100%;min-height:100%}body{background:var(--darker);background-image:radial-gradient(ellipse at 20% 50%,rgba(0,100,180,.09),transparent 60%),radial-gradient(ellipse at 80% 20%,rgba(0,173,239,.06),transparent 50%),radial-gradient(ellipse at 50% 100%,rgba(0,50,120,.12),transparent 60%);color:var(--white);font-family:Cairo,Tahoma,Arial,sans-serif;min-height:100vh;min-height:100dvh;display:flex;align-items:center;justify-content:center;overflow-x:hidden;position:relative;padding:20px 0}body:before{content:'';position:fixed;inset:0;background-image:linear-gradient(rgba(0,173,239,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(0,173,239,.035) 1px,transparent 1px);background-size:60px 60px;pointer-events:none}.particles{position:fixed;inset:0;pointer-events:none;overflow:hidden}.particle{position:absolute;width:2px;height:2px;background:var(--blue);border-radius:50%;animation:float linear infinite}@keyframes float{0%{transform:translateY(100vh);opacity:0}10%{opacity:.7}90%{opacity:.3}100%{transform:translateY(-10vh) translateX(40px);opacity:0}}.main-content{position:relative;z-index:1;width:min(92vw,820px);display:flex;flex-direction:column;align-items:center;gap:20px;animation:fadeIn .8s ease}@keyframes fadeIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}.logo-wrapper{display:flex;align-items:center;gap:25px;direction:ltr}.logo-bs-icon{width:clamp(120px,16vw,200px);height:clamp(80px,11vw,140px);filter:drop-shadow(0 5px 0 rgba(0,0,0,.95)) drop-shadow(3px 8px 10px rgba(0,0,0,.8))}.logo-divider{width:2px;height:70px;background:linear-gradient(to bottom,transparent,var(--blue),transparent);opacity:.55}.logo-text-group{display:flex;flex-direction:column;line-height:1.15}.logo-arabic{font-size:clamp(1.7rem,4vw,3rem);font-weight:900;color:#fff;text-shadow:0 0 24px rgba(0,173,239,.45);direction:rtl;white-space:nowrap}.logo-arabic span{color:var(--blue)}.logo-english{font-size:clamp(.8rem,1.4vw,1.2rem);font-weight:700;color:rgba(255,255,255,.6);letter-spacing:3px;text-transform:uppercase;margin-top:5px;font-family:Georgia,serif}.exploit-badge{display:flex;align-items:center;gap:10px;background:var(--blue-dim);border:1px solid rgba(0,173,239,.35);border-radius:30px;padding:8px 22px;font-size:clamp(.72rem,1.2vw,.95rem);font-weight:700;color:var(--blue);letter-spacing:1px;text-align:center}.exploit-badge:before{content:'';width:9px;height:9px;background:var(--green);border-radius:50%;box-shadow:0 0 10px var(--green);animation:pulse 1.5s infinite;flex-shrink:0}@keyframes pulse{50%{opacity:.45;transform:scale(.75)}}.terminal-box{width:100%;background:rgba(2,10,20,.82);border:1px solid rgba(0,173,239,.28);border-radius:12px;overflow:hidden;box-shadow:0 0 30px rgba(0,173,239,.08)}.terminal-header{display:flex;align-items:center;gap:8px;padding:12px 18px;background:rgba(0,173,239,.07);border-bottom:1px solid rgba(0,173,239,.16)}.terminal-dot{width:11px;height:11px;border-radius:50%}.terminal-dot.red{background:#ff5f57}.terminal-dot.yellow{background:#febc2e}.terminal-dot.green{background:#28c840}.terminal-title{margin-right:auto;font:.75rem monospace;color:rgba(255,255,255,.38);letter-spacing:1.5px}#msgs{font-size:clamp(1rem,2vw,1.3rem);font-weight:800;text-align:center;color:var(--white);padding:18px 15px 6px;min-height:1.6em;line-height:1.6}#msgs2{font-size:clamp(1rem,2vw,1.3rem);font-weight:800;text-align:center;color:var(--white);padding:32px 15px;min-height:1.6em;line-height:1.6}#progress{padding:0}#menu,#lnx,#mods{width:100%;display:none;flex-direction:column;align-items:center;gap:10px;padding:18px 24px 28px}#menu{display:none}#menu.active,#lnx.active,#mods.active{display:flex}#menu>h1,#lnx>h1,#mods>h1{font-size:1rem!important;color:var(--blue)!important;margin:0 0 4px!important}#menu>br,#menu>hr,#lnx>br,#lnx>hr,#mods>br,#mods>hr{display:none}.btn{appearance:none;border:1px solid rgba(0,173,239,.35);border-radius:9px;background:linear-gradient(180deg,rgba(0,173,239,.13),rgba(0,70,120,.09));color:#dff7ff;padding:12px 22px;min-width:min(100%,360px);font-family:inherit;font-size:.95rem;font-weight:700;cursor:pointer;transition:.2s;box-shadow:0 0 14px rgba(0,173,239,.04)}.btn:hover{transform:translateY(-2px);border-color:var(--blue);color:#fff;box-shadow:0 0 20px rgba(0,173,239,.18)}.btn-multi{border-color:rgba(0,255,136,.4);color:var(--green)}.btn-multi:hover{border-color:var(--green)}.btn-onln{display:none!important}#menu a,#lnx a,#mods a{display:block;text-decoration:none;width:100%;max-width:360px}#menu select,#lnx select,#mods select{appearance:none;background:rgba(0,173,239,.1);border:1px solid rgba(0,173,239,.35);color:#dff7ff;padding:8px 14px;border-radius:9px;font-family:inherit;font-size:.9rem;font-weight:700;cursor:pointer;margin:0 4px}#menu select:hover{border-color:var(--blue)}.thanks-line{text-align:center;font-size:clamp(.72rem,1.4vw,.85rem);font-weight:600;color:rgba(232,244,255,.72);padding:8px 15px 22px;line-height:1.8}.thanks-line a{color:#f31414;text-decoration:none;margin:0 8px;font-weight:700}.thanks-line a:hover{text-decoration:underline}.store-footer{width:100%;text-align:center;margin-top:24px;margin-bottom:12px;padding:0 12px;color:var(--white);line-height:1.9;font-family:inherit;text-shadow:0 0 10px rgba(0,173,239,.12)}.store-address{font-size:clamp(.78rem,1.8vw,1rem);font-weight:700;color:var(--white);margin-bottom:7px}.store-designer{font-size:clamp(.72rem,1.55vw,.9rem);font-weight:600;color:rgba(232,244,255,.72)}.footer{width:100%;text-align:center;font-size:.8rem;color:rgba(255,255,255,.62);line-height:1.9;padding:0 10px}.footer a{color:rgba(0,173,239,.7);text-decoration:none}@media(max-width:600px){body{align-items:flex-start}.main-content{margin-top:2vh}.logo-wrapper{gap:12px}.logo-bs-icon{width:105px;height:75px}.logo-divider{height:55px}.logo-arabic{font-size:1.45rem}.logo-english{font-size:.68rem;letter-spacing:1.5px}.exploit-badge{white-space:normal}.btn{min-width:100%}#menu,#lnx,#mods{padding:14px 8px}.footer{font-size:.72rem}}
+</style>
 </head>
 <body onload="setTimeout(poc, 50);">
+
 <script>
 if (window.applicationCache.status=='0'){window.location.replace("cache.html");}
 </script>
-<h1 id="msgs">PS4 9.00 FW Host v3.0 by GamerHack</h1>
-<hr>
-<br>
-<div id="progress">
-<h1 id="msgs2" style="font-size: 30px;margin-top: 77px;margin-bottom: 412px;">Loading Jailbreak... Please Wait</h1>
+
+<div class="particles" id="particles"></div>
+
+<div class="main-content">
+
+  <div class="logo-wrapper">
+    <svg class="logo-bs-icon"
+         viewBox="0 0 155 105"
+         preserveAspectRatio="xMidYMid meet"
+         xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="gBS" x1="0%" y1="0%" x2="15%" y2="100%">
+          <stop offset="0%"   stop-color="#ffffff"/>
+          <stop offset="22%"  stop-color="#e0e0e0"/>
+          <stop offset="50%"  stop-color="#888888"/>
+          <stop offset="78%"  stop-color="#2a2a2a"/>
+          <stop offset="100%" stop-color="#050505"/>
+        </linearGradient>
+        <linearGradient id="gGloss" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%"   stop-color="#ffffff" stop-opacity="0.45"/>
+          <stop offset="45%"  stop-color="#ffffff" stop-opacity="0.08"/>
+          <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+        </linearGradient>
+        <linearGradient id="gPlay" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%"  stop-color="#00ccff"/>
+          <stop offset="100%" stop-color="#0044cc"/>
+        </linearGradient>
+        <filter id="fShadow3d" x="-10%" y="-10%" width="130%" height="140%">
+          <feDropShadow dx="1"  dy="2"  stdDeviation="0" flood-color="#666" flood-opacity="0.4"/>
+          <feDropShadow dx="2"  dy="4"  stdDeviation="1" flood-color="#222" flood-opacity="0.7"/>
+          <feDropShadow dx="4"  dy="7"  stdDeviation="4" flood-color="#000" flood-opacity="0.9"/>
+        </filter>
+        <filter id="fPlayGlow" x="-50%" y="-50%" width="200%" height="200%">
+          <feGaussianBlur stdDeviation="2.5" result="b"/>
+          <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+        </filter>
+        <clipPath id="clipBS">
+          <rect x="0" y="0" width="155" height="105"/>
+        </clipPath>
+      </defs>
+      <g clip-path="url(#clipBS)">
+        <text x="6" y="83" font-family="'Arial Black','Impact',sans-serif" font-weight="900" font-size="86" letter-spacing="-5" fill="#000" opacity="0.75" filter="url(#fShadow3d)">BS</text>
+        <text x="2" y="80" font-family="'Arial Black','Impact',sans-serif" font-weight="900" font-size="86" letter-spacing="-5" fill="url(#gBS)">BS</text>
+        <text x="2" y="80" font-family="'Arial Black','Impact',sans-serif" font-weight="900" font-size="86" letter-spacing="-5" fill="url(#gGloss)" opacity="0.55">BS</text>
+        <circle cx="18" cy="96" r="8.5" fill="url(#gPlay)" filter="url(#fPlayGlow)"/>
+        <circle cx="18" cy="96" r="8.5" fill="none" stroke="rgba(150,230,255,0.6)" stroke-width="1"/>
+        <polygon points="15.5,92.8 15.5,99.2 22.5,96" fill="white" opacity="0.95"/>
+      </g>
+    </svg>
+    <div class="logo-divider"></div>
+    <div class="logo-text-group">
+      <div class="logo-arabic">بليغ ستور <span>2</span></div>
+      <div class="logo-english">Baligh Store 2</div>
+    </div>
+  </div>
+
+  <div class="exploit-badge">PS4 EXPLOIT HOST &nbsp;·&nbsp; 9.00 FW v3.0</div>
+
+  <div class="terminal-box">
+    <div class="terminal-header">
+      <div class="terminal-dot red"></div>
+      <div class="terminal-dot yellow"></div>
+      <div class="terminal-dot green"></div>
+      <div class="terminal-title">BALIGH STORE 2 / PS4 HOST</div>
+    </div>
+
+    <h1 id="msgs">PS4 9.00 FW Host v3.0 by AlawiM7</h1>
+
+    <div id="progress">
+      <h1 id="msgs2">Loading Jailbreak... Please Wait</h1>
+    </div>
+
+    <div id="menu">
+      <h1 style="font-size: 18px;color: var(--blue);">Main Payloads</h1>
+      <button class="btn" onmouseover="msgs.innerHTML='GoldHEN v2.4b18.12 for 9.00 FW'" onmouseout="msgs.innerHTML='PS4 9.00 FW Host v3.0 by AlawiM7'" onclick="load_goldhenbeta()"> GoldHEN v2.4b18.12 </button>
+      <button class="btn" onmouseover="msgs.innerHTML='GoldHEN v2.3 for 9.00 FW'" onmouseout="msgs.innerHTML='PS4 9.00 FW Host v3.0 by AlawiM7'" onclick="load_goldhen23()"> GoldHEN v2.3 </button>
+      <button class="btn" onmouseover="msgs.innerHTML='Send a Payload using port 9020'" onmouseout="msgs.innerHTML='PS4 9.00 FW Host v3.0 by AlawiM7'" onclick="load_binloader()"> Bin Loader </button>
+      <br>
+      <h1 style="font-size: 18px;color: var(--blue);">Payloads</h1>
+      <button class="btn" onmouseover="msgs.innerHTML='Dump Game Only to USB Drive'" onmouseout="msgs.innerHTML='PS4 9.00 FW Host v3.0 by AlawiM7'" onclick="load_Gdumper()"> Game-Dumper </button>
+      <button class="btn" onmouseover="msgs.innerHTML='Dump Update Only to USB Drive'" onmouseout="msgs.innerHTML='PS4 9.00 FW Host v3.0 by AlawiM7'" onclick="load_Udumper()"> Update-Dumper </button>
+      <button class="btn" onmouseover="msgs.innerHTML='Dump Separate Game and Update to USB Drive'" onmouseout="msgs.innerHTML='PS4 9.00 FW Host v3.0 by AlawiM7'" onclick="load_SGUdumper()"> SGU-Dumper </button>
+      <button class="btn" onmouseover="msgs.innerHTML='Dump Merged Game and Update to USB Drive'" onmouseout="msgs.innerHTML='PS4 9.00 FW Host v3.0 by AlawiM7'" onclick="load_MGUdumper()"> MGU-Dumper </button>
+      <br>
+      <button class="btn" onmouseover="msgs.innerHTML='Enable Some Debugging Functions Available on TestKit'" onmouseout="msgs.innerHTML='PS4 9.00 FW Host v3.0 by AlawiM7'" onclick="load_todex()"> ToDex </button>
+      <a href="webactivator.html"><button class="btn" onmouseover="msgs.innerHTML='Activate Your User Account from the Console Browser'" onmouseout="msgs.innerHTML='PS4 9.00 FW Host v3.0 by AlawiM7'"> Web-Activator </button></a>
+      <button class="btn" onmouseover="msgs.innerHTML='Access this console Through FTP (Be careful what you do)'" onmouseout="msgs.innerHTML='PS4 9.00 FW Host v3.0 by AlawiM7'" onclick="load_ftp()"> FTP </button>
+      <button class="btn" onmouseover="msgs.innerHTML='Transfer Installed Games to USB Drive in exFAT'" onmouseout="msgs.innerHTML='PS4 9.00 FW Host v3.0 by AlawiM7'" onclick="load_app2usb()"> App2USB </button>
+      <button class="btn" onmouseover="msgs.innerHTML='Create a Backup of the Database and Users to a USB Drive'" onmouseout="msgs.innerHTML='PS4 9.00 FW Host v3.0 by AlawiM7'" onclick="load_dbackup()"> DB Backup </button>
+      <button class="btn" onmouseover="msgs.innerHTML='Restore a Backup of the Database and Users from a USB Drive'" onmouseout="msgs.innerHTML='PS4 9.00 FW Host v3.0 by AlawiM7'" onclick="load_dbrestore()"> DB Restore </button>
+      <br>
+      <button class="btn" onmouseover="msgs.innerHTML='Enable System Updates'" onmouseout="msgs.innerHTML='PS4 9.00 FW Host v3.0 by AlawiM7'" onclick="load_enablebUpdates()"> Enable Updates </button>
+      <button class="btn" onmouseover="msgs.innerHTML='Disable System Updates'" onmouseout="msgs.innerHTML='PS4 9.00 FW Host v3.0 by AlawiM7'" onclick="load_disableUpdates()"> Disable Updates </button>
+      <button class="btn" onmouseover="msgs.innerHTML='Enable/Disable Browser History.'" onmouseout="msgs.innerHTML='PS4 9.00 FW Host v3.0 by AlawiM7'" onclick="load_historyBlocker()"> History Blocker </button>
+      <button class="btn" onmouseover="msgs.innerHTML='Dump a Console Kernel to a USB Drive'" onmouseout="msgs.innerHTML='PS4 9.00 FW Host v3.0 by AlawiM7'" onclick="load_kernelDump()"> Kernel Dumper </button>
+      <button class="btn" onmouseover="msgs.innerHTML='Dump a Kernel Module to a USB Drive'" onmouseout="msgs.innerHTML='PS4 9.00 FW Host v3.0 by AlawiM7'" onclick="load_moduleDump()"> Module Dumper </button>
+      <button class="btn" onmouseover="msgs.innerHTML='PS4 Debug for 9.00 FW'" onmouseout="msgs.innerHTML='PS4 9.00 FW Host v3.0 by AlawiM7'" onclick="load_ps4debug()"> PS4 Debug </button>
+      <br>
+      <button class="btn" onmouseover="msgs.innerHTML='Disables the ASLR (Address space layout randomization)'" onmouseout="msgs.innerHTML='PS4 9.00 FW Host v3.0 by AlawiM7'" onclick="load_disbAslr()"> Disable ASLR </button>
+      <button class="btn" onmouseover="msgs.innerHTML='Disable IDU Mode if you have activated it by mistake'" onmouseout="msgs.innerHTML='PS4 9.00 FW Host v3.0 by AlawiM7'" onclick="load_exitidu()"> Exit IDU </button>
+      <button class="btn" onmouseover="msgs.innerHTML='Renames (fake) RIFs to (free) RIFs'" onmouseout="msgs.innerHTML='PS4 9.00 FW Host v3.0 by AlawiM7'" onclick="load_rifRen()"> RIF Renamer </button>
+      <button class="btn" onmouseover="msgs.innerHTML='Permanent UART for 9.00 FW'" onmouseout="msgs.innerHTML='PS4 9.00 FW Host v3.0 by AlawiM7'" onclick="load_permUart()"> Permanent UART </button>
+      <button class="btn" onmouseover="msgs.innerHTML='Required to Activate Cheats Through the PS4 Trainer Website'" onmouseout="msgs.innerHTML='PS4 9.00 FW Host v3.0 by AlawiM7'" onclick="load_webrte()"> WebRTE </button>
+      <a href="http://ps4trainer.com/Trainer/index.html"><button class="btn btn-onln" onmouseover="msgs.innerHTML='PS4 Trainer Website (Follow Instructions There)'" onmouseout="msgs.innerHTML='PS4 9.00 FW Host v3.0 by AlawiM7'"> PS4 Trainer Web </button></a>
+      <br>
+      <button class="btn" onmouseover="msgs.innerHTML='Linux Loaders Menu'" onmouseout="msgs.innerHTML='PS4 9.00 FW Host v3.0 by AlawiM7'" onclick="linux_group()"> Linux Loaders </button>
+      <button class="btn btn-onln" onmouseover="msgs.innerHTML='Games Mods (Hosted Online)'" onmouseout="msgs.innerHTML='PS4 9.00 FW Host v3.0 by AlawiM7'" onclick="mods_group()"> Games-Mods (Online) </button>
+      <button class="btn btn-multi" onmouseover="msgs.innerHTML='Orbis ToolBox Alpha 1190 for 9.00 FW'" onmouseout="msgs.innerHTML='PS4 9.00 FW Host v3.0 by AlawiM7'" onclick="load_toolbox()"> Orbis-Toolbox </button>
+      <button class="btn" onmouseover="msgs.innerHTML='Modify PS4 FAN Speed'" onmouseout="msgs.innerHTML='PS4 9.00 FW Host v3.0 by AlawiM7'" onclick="load_fanthreshold()"> Fan Threshold </button><select id="tempC"></select>°C
+    </div>
+
+    <div id="lnx">
+      <h1 style="font-size: 18px;color: var(--blue);">Linux Payloads</h1>
+      <button class="btn" onmouseover="msgs.innerHTML='Identify the Southbridge of your Console for the Linux Installation'" onmouseout="msgs.innerHTML='PS4 9.00 FW Host v3.0 by AlawiM7'" onclick="load_southbridge()"> Whos that Southbridge </button>
+      <br>
+      <button class="btn" onmouseover="msgs.innerHTML='Load Linux with 1GB VRAM (PSXita)'" onmouseout="msgs.innerHTML='PS4 9.00 FW Host v3.0 by AlawiM7'" onclick="load_linux1gb()"> Linux 1GB </button>
+      <button class="btn" onmouseover="msgs.innerHTML='Load Linux with 2GB VRAM (PSXita)'" onmouseout="msgs.innerHTML='PS4 9.00 FW Host v3.0 by AlawiM7'" onclick="load_linux2gb()"> Linux 2GB </button>
+      <button class="btn" onmouseover="msgs.innerHTML='Load Linux with 3GB VRAM (PSXita)'" onmouseout="msgs.innerHTML='PS4 9.00 FW Host v3.0 by AlawiM7'" onclick="load_linux3gb()"> Linux 3GB </button>
+      <button class="btn" onmouseover="msgs.innerHTML='Load Linux with 4GB VRAM (PSXita)'" onmouseout="msgs.innerHTML='PS4 9.00 FW Host v3.0 by AlawiM7'" onclick="load_linux4gb()"> Linux 4GB </button>
+      <br>
+      <button class="btn" onmouseover="msgs.innerHTML='Load Linux for (PS4-Pro) with 1GB VRAM (PSXita)'" onmouseout="msgs.innerHTML='PS4 9.00 FW Host v3.0 by AlawiM7'" onclick="load_linuxPS4Pro1gb()"> Linux 1GB (PS4-Pro) </button>
+      <button class="btn" onmouseover="msgs.innerHTML='Load Linux for (PS4-Pro) with 2GB VRAM (PSXita)'" onmouseout="msgs.innerHTML='PS4 9.00 FW Host v3.0 by AlawiM7'" onclick="load_linuxPS4Pro2gb()"> Linux 2GB (PS4-Pro) </button>
+      <button class="btn" onmouseover="msgs.innerHTML='Load Linux for (PS4-Pro) with 3GB VRAM (PSXita)'" onmouseout="msgs.innerHTML='PS4 9.00 FW Host v3.0 by AlawiM7'" onclick="load_linuxPS4Pro3gb()"> Linux 3GB (PS4-Pro) </button>
+      <button class="btn" onmouseover="msgs.innerHTML='Load Linux for (PS4-Pro) with 4GB VRAM (PSXita)'" onmouseout="msgs.innerHTML='PS4 9.00 FW Host v3.0 by AlawiM7'" onclick="load_linuxPS4Pro4gb()"> Linux 4GB (PS4-Pro) </button>
+      <br>
+      <button class="btn" onmouseover="msgs.innerHTML='Return to Main Menu'" onmouseout="msgs.innerHTML='PS4 9.00 FW Host v3.0 by AlawiM7'" onclick="load_menu()"> Return </button>
+    </div>
+
+    <div id="mods">
+      <h1 style="font-size: 18px;color: var(--blue);">Online Payloads</h1>
+      <button class="btn" onmouseover="msgs.innerHTML='GTA V Mod - Arabic Guy v1.00 (L1 + R1)'" onmouseout="msgs.innerHTML='PS4 9.00 FW Host v3.0 by AlawiM7'" onclick="load_arabicGuy100()"> Arabic Guy v1.00 </button>
+      <button class="btn" onmouseover="msgs.innerHTML='GTA V Mod - Arabic Guy v1.27 (L1 + R1)'" onmouseout="msgs.innerHTML='PS4 9.00 FW Host v3.0 by AlawiM7'" onclick="load_arabicGuy127()"> Arabic Guy v1.27 </button>
+      <button class="btn" onmouseover="msgs.innerHTML='GTA V Mod - Arabic Guy v1.32 (L1 + R1)'" onmouseout="msgs.innerHTML='PS4 9.00 FW Host v3.0 by AlawiM7'" onclick="load_arabicGuy132()"> Arabic Guy v1.32 </button>
+      <button class="btn" onmouseover="msgs.innerHTML='GTA V Mod - Arabic Guy v1.33 (L1 + R1)'" onmouseout="msgs.innerHTML='PS4 9.00 FW Host v3.0 by AlawiM7'" onclick="load_arabicGuy133()"> Arabic Guy v1.33 </button>
+      <button class="btn" onmouseover="msgs.innerHTML='GTA V Mod - Expulsion v4.0 - 1.38'" onmouseout="msgs.innerHTML='PS4 9.00 FW Host v3.0 by AlawiM7'" onclick="load_Expulsion()"> Expulsion v4.0 - 1.38 </button>
+      <button class="btn" onmouseover="msgs.innerHTML='GTA V Mod - Lamance v0.9 - 1.38 (Right + Square)'" onmouseout="msgs.innerHTML='PS4 9.00 FW Host v3.0 by AlawiM7'" onclick="load_Lamance()"> Lamance v0.9 - 1.38 </button>
+      <br>
+      <button class="btn" onmouseover="msgs.innerHTML='GTA V Mod - WildeModz-1.32'" onmouseout="msgs.innerHTML='PS4 9.00 FW Host v3.0 by AlawiM7'" onclick="load_WildeModz132()"> WildeModz-1.32 </button>
+      <button class="btn" onmouseover="msgs.innerHTML='GTA V Mod - WildeModz-1.33'" onmouseout="msgs.innerHTML='PS4 9.00 FW Host v3.0 by AlawiM7'" onclick="load_WildeModz133()"> WildeModz-1.33 </button>
+      <button class="btn" onmouseover="msgs.innerHTML='GTA V Mod - WildeModz-1.38'" onmouseout="msgs.innerHTML='PS4 9.00 FW Host v3.0 by AlawiM7'" onclick="load_WildeModz138()"> WildeModz-1.38 </button>
+      <button class="btn" onmouseover="msgs.innerHTML='GTA V Mod - WildeModz-1.46'" onmouseout="msgs.innerHTML='PS4 9.00 FW Host v3.0 by AlawiM7'" onclick="load_WildeModz146()"> WildeModz-1.46 </button>
+      <button class="btn" onmouseover="msgs.innerHTML='GTA V Mod - WildeModz-1.47'" onmouseout="msgs.innerHTML='PS4 9.00 FW Host v3.0 by AlawiM7'" onclick="load_WildeModz147()"> WildeModz-1.47 </button>
+      <br>
+      <button class="btn" onmouseover="msgs.innerHTML='GTA V Mod - Beef Queef Mod v1.33'" onmouseout="msgs.innerHTML='PS4 9.00 FW Host v3.0 by AlawiM7'" onclick="load_beefQueef133()"> Beef Queef Mod v1.33 </button>
+      <button class="btn" onmouseover="msgs.innerHTML='GTA V Mod - Beef Queef Mod v1.34'" onmouseout="msgs.innerHTML='PS4 9.00 FW Host v3.0 by AlawiM7'" onclick="load_beefQueef134()"> Beef Queef Mod v1.34 </button>
+      <button class="btn" onmouseover="msgs.innerHTML='GTA V Mod - Beef Queef Mod v1.38d'" onmouseout="msgs.innerHTML='PS4 9.00 FW Host v3.0 by AlawiM7'" onclick="load_beefQueef138()"> Beef Queef Mod v1.38d </button>
+      <button class="btn" onmouseover="msgs.innerHTML='GTA V Mod - Beef Queef Mod v1.47'" onmouseout="msgs.innerHTML='PS4 9.00 FW Host v3.0 by AlawiM7'" onclick="load_beefQueef147()"> Beef Queef Mod v1.47 </button>
+      <br>
+      <button class="btn" onmouseover="msgs.innerHTML='Red Dead Redemption 2 Mod - Oysters Menu v1.00'" onmouseout="msgs.innerHTML='PS4 9.00 FW Host v3.0 by AlawiM7'" onclick="load_Oysters100()"> RDR2 v1.00 </button>
+      <button class="btn" onmouseover="msgs.innerHTML='Red Dead Redemption 2 Mod - Oysters Menu v1.13'" onmouseout="msgs.innerHTML='PS4 9.00 FW Host v3.0 by AlawiM7'" onclick="load_Oysters113()"> RDR2 v1.13 </button>
+      <button class="btn" onmouseover="msgs.innerHTML='Red Dead Redemption 2 Mod - Oysters Menu v1.19'" onmouseout="msgs.innerHTML='PS4 9.00 FW Host v3.0 by AlawiM7'" onclick="load_Oysters119()"> RDR2 v1.19 </button>
+      <button class="btn" onmouseover="msgs.innerHTML='Red Dead Redemption 2 Mod - Oysters Menu v1.24'" onmouseout="msgs.innerHTML='PS4 9.00 FW Host v3.0 by AlawiM7'" onclick="load_Oysters124()"> RDR2 v1.24 </button>
+      <button class="btn" onmouseover="msgs.innerHTML='Red Dead Redemption 2 Mod - Oysters Menu v1.29'" onmouseout="msgs.innerHTML='PS4 9.00 FW Host v3.0 by AlawiM7'" onclick="load_Oysters129()"> RDR2 v1.29 </button>
+      <br>
+      <button class="btn" onmouseover="msgs.innerHTML='Return to Main Menu'" onmouseout="msgs.innerHTML='PS4 9.00 FW Host v3.0 by AlawiM7'" onclick="load_menu()"> Return </button>
+    </div>
+
+    <div class="thanks-line">
+      Special Thanks to:
+      <a href="https://twitter.com/sleirsgoevy">@sleirsgoevy</a>
+      ChendoChap
+      <a href="https://twitter.com/Znullptr">@Znullptr</a>
+      SiSTR0
+    </div>
+  </div>
+
+  <div class="store-footer" dir="rtl">
+    <div class="store-address">🏪 بليغ ستور 2 | صنعاء — الخمسين — بيت بوس — خلف كافتيريا ركن الأحلام — جوار سوبر ماركت الصخرة</div>
+    <div class="store-designer">تصميم المهندس علوي محمد الحبيشي (770047367)</div>
+  </div>
+
+  <div class="footer">
+    <div>PS4 Exploit Host · Baligh Store 2</div>
+    <div>واجهة بتصميم Baligh Store 2</div>
+  </div>
+
 </div>
-<div id="menu" style="display: none">
-<h1 style="font-size: 18px;color: yellow;">Main Payloads</h1>
-<button class="btn" onmouseover="msgs.innerHTML='GoldHEN v2.4b18.12 for 9.00 FW'" onmouseout="msgs.innerHTML='PS4 9.00 FW Host v3.0 by GamerHack'" onclick="load_goldhenbeta()"> GoldHEN v2.4b18.12 </button>
-<button class="btn" onmouseover="msgs.innerHTML='GoldHEN v2.3 for 9.00 FW'" onmouseout="msgs.innerHTML='PS4 9.00 FW Host v3.0 by GamerHack'" onclick="load_goldhen23()"> GoldHEN v2.3 </button>
-<button class="btn" onmouseover="msgs.innerHTML='Send a Payload using port 9020'" onmouseout="msgs.innerHTML='PS4 9.00 FW Host v3.0 by GamerHack'" onclick="load_binloader()"> Bin Loader </button>
-<br>
-<h1 style="font-size: 18px;">Payloads</h1>
-<button class="btn" onmouseover="msgs.innerHTML='Dump Game Only to USB Drive'" onmouseout="msgs.innerHTML='PS4 9.00 FW Host v3.0 by GamerHack'" onclick="load_Gdumper()"> Game-Dumper </button>
-<button class="btn" onmouseover="msgs.innerHTML='Dump Update Only to USB Drive'" onmouseout="msgs.innerHTML='PS4 9.00 FW Host v3.0 by GamerHack'" onclick="load_Udumper()"> Update-Dumper </button>
-<button class="btn" onmouseover="msgs.innerHTML='Dump Separate Game and Update to USB Drive'" onmouseout="msgs.innerHTML='PS4 9.00 FW Host v3.0 by GamerHack'" onclick="load_SGUdumper()"> SGU-Dumper </button>
-<button class="btn" onmouseover="msgs.innerHTML='Dump Merged Game and Update to USB Drive'" onmouseout="msgs.innerHTML='PS4 9.00 FW Host v3.0 by GamerHack'" onclick="load_MGUdumper()"> MGU-Dumper </button>
-<br>
-<button class="btn" onmouseover="msgs.innerHTML='Enable Some Debugging Functions Available on TestKit'" onmouseout="msgs.innerHTML='PS4 9.00 FW Host v3.0 by GamerHack'" onclick="load_todex()"> ToDex </button>
-<a href="webactivator.html"><button class="btn" onmouseover="msgs.innerHTML='Activate Your User Account from the Console Browser'" onmouseout="msgs.innerHTML='PS4 9.00 FW Host v3.0 by GamerHack'"> Web-Activator </button></a>
-<button class="btn" onmouseover="msgs.innerHTML='Access this console Through FTP (Be careful what you do)'" onmouseout="msgs.innerHTML='PS4 9.00 FW Host v3.0 by GamerHack'" onclick="load_ftp()"> FTP </button>
-<button class="btn" onmouseover="msgs.innerHTML='Transfer Installed Games to USB Drive in exFAT'" onmouseout="msgs.innerHTML='PS4 9.00 FW Host v3.0 by GamerHack'" onclick="load_app2usb()"> App2USB </button>
-<button class="btn" onmouseover="msgs.innerHTML='Create a Backup of the Database and Users to a USB Drive'" onmouseout="msgs.innerHTML='PS4 9.00 FW Host v3.0 by GamerHack'" onclick="load_dbackup()"> DB Backup </button>
-<button class="btn" onmouseover="msgs.innerHTML='Restore a Backup of the Database and Users from a USB Drive'" onmouseout="msgs.innerHTML='PS4 9.00 FW Host v3.0 by GamerHack'" onclick="load_dbrestore()"> DB Restore </button>
-<br>
-<button class="btn" onmouseover="msgs.innerHTML='Enable System Updates'" onmouseout="msgs.innerHTML='PS4 9.00 FW Host v3.0 by GamerHack'" onclick="load_enablebUpdates()"> Enable Updates </button>
-<button class="btn" onmouseover="msgs.innerHTML='Disable System Updates'" onmouseout="msgs.innerHTML='PS4 9.00 FW Host v3.0 by GamerHack'" onclick="load_disableUpdates()"> Disable Updates </button>
-<button class="btn" onmouseover="msgs.innerHTML='Enable/Disable Browser History.'" onmouseout="msgs.innerHTML='PS4 9.00 FW Host v3.0 by GamerHack'" onclick="load_historyBlocker()"> History Blocker </button>
-<button class="btn" onmouseover="msgs.innerHTML='Dump a Console Kernel to a USB Drive'" onmouseout="msgs.innerHTML='PS4 9.00 FW Host v3.0 by GamerHack'" onclick="load_kernelDump()"> Kernel Dumper </button>
-<button class="btn" onmouseover="msgs.innerHTML='Dump a Kernel Module to a USB Drive'" onmouseout="msgs.innerHTML='PS4 9.00 FW Host v3.0 by GamerHack'" onclick="load_moduleDump()"> Module Dumper </button>
-<button class="btn" onmouseover="msgs.innerHTML='PS4 Debug for 9.00 FW'" onmouseout="msgs.innerHTML='PS4 9.00 FW Host v3.0 by GamerHack'" onclick="load_ps4debug()"> PS4 Debug </button>
-<br>
-<button class="btn" onmouseover="msgs.innerHTML='Disables the ASLR (Address space layout randomization)'" onmouseout="msgs.innerHTML='PS4 9.00 FW Host v3.0 by GamerHack'" onclick="load_disbAslr()"> Disable ASLR </button>
-<button class="btn" onmouseover="msgs.innerHTML='Disable IDU Mode if you have activated it by mistake'" onmouseout="msgs.innerHTML='PS4 9.00 FW Host v3.0 by GamerHack'" onclick="load_exitidu()"> Exit IDU </button>
-<button class="btn" onmouseover="msgs.innerHTML='Renames (fake) RIFs to (free) RIFs'" onmouseout="msgs.innerHTML='PS4 9.00 FW Host v3.0 by GamerHack'" onclick="load_rifRen()"> RIF Renamer </button>
-<button class="btn" onmouseover="msgs.innerHTML='Permanent UART for 9.00 FW'" onmouseout="msgs.innerHTML='PS4 9.00 FW Host v3.0 by GamerHack'" onclick="load_permUart()"> Permanent UART </button>
-<button class="btn" onmouseover="msgs.innerHTML='Required to Activate Cheats Through the PS4 Trainer Website'" onmouseout="msgs.innerHTML='PS4 9.00 FW Host v3.0 by GamerHack'" onclick="load_webrte()"> WebRTE </button>
-<a href="http://ps4trainer.com/Trainer/index.html"><button class="btn btn-onln" onmouseover="msgs.innerHTML='PS4 Trainer Website (Follow Instructions There)'" onmouseout="msgs.innerHTML='PS4 9.00 FW Host v3.0 by GamerHack'"> PS4 Trainer Web </button></a>
-<br>
-<button class="btn" onmouseover="msgs.innerHTML='Linux Loaders Menu'" onmouseout="msgs.innerHTML='PS4 9.00 FW Host v3.0 by GamerHack'" onclick="linux_group()" style="margin-left: 69px"> Linux Loaders </button>
-<button class="btn btn-onln" onmouseover="msgs.innerHTML='Games Mods (Hosted Online)'" onmouseout="msgs.innerHTML='PS4 9.00 FW Host v3.0 by GamerHack'" onclick="mods_group()"> Games-Mods (Online) </button>
-<button class="btn btn-toolbox" onmouseover="msgs.innerHTML='Orbis ToolBox Alpha 1190 for 9.00 FW'" onmouseout="msgs.innerHTML='PS4 9.00 FW Host v3.0 by GamerHack'" onclick="load_toolbox()"> Orbis-Toolbox </button>
-<button class="btn" onmouseover="msgs.innerHTML='Modify PS4 FAN Speed'" onmouseout="msgs.innerHTML='PS4 9.00 FW Host v3.0 by GamerHack'" onclick="load_fanthreshold()" style="margin-bottom: 70px"> Fan Threshold </button><select id="tempC"></select>°C
-</div>
-<div id="lnx">
-<h1 style="font-size: 18px;color: yellow;">Linux Payloads</h1>
-<button class="btn" onmouseover="msgs.innerHTML='Identify the Southbridge of your Console for the Linux Installation'" onmouseout="msgs.innerHTML='PS4 9.00 FW Host v3.0 by GamerHack'" onclick="load_southbridge()"> Whos that Southbridge </button>
-<br>
-<button class="btn" onmouseover="msgs.innerHTML='Load Linux with 1GB VRAM (PSXita)'" onmouseout="msgs.innerHTML='PS4 9.00 FW Host v3.0 by GamerHack'" onclick="load_linux1gb()"> Linux 1GB </button>
-<button class="btn" onmouseover="msgs.innerHTML='Load Linux with 2GB VRAM (PSXita)'" onmouseout="msgs.innerHTML='PS4 9.00 FW Host v3.0 by GamerHack'" onclick="load_linux2gb()"> Linux 2GB </button>
-<button class="btn" onmouseover="msgs.innerHTML='Load Linux with 3GB VRAM (PSXita)'" onmouseout="msgs.innerHTML='PS4 9.00 FW Host v3.0 by GamerHack'" onclick="load_linux3gb()"> Linux 3GB </button>
-<button class="btn" onmouseover="msgs.innerHTML='Load Linux with 4GB VRAM (PSXita)'" onmouseout="msgs.innerHTML='PS4 9.00 FW Host v3.0 by GamerHack'" onclick="load_linux4gb()"> Linux 4GB </button>
-<br>
-<button class="btn" onmouseover="msgs.innerHTML='Load Linux for (PS4-Pro) with 1GB VRAM (PSXita)'" onmouseout="msgs.innerHTML='PS4 9.00 FW Host v3.0 by GamerHack'" onclick="load_linuxPS4Pro1gb()"> Linux 1GB (PS4-Pro) </button>
-<button class="btn" onmouseover="msgs.innerHTML='Load Linux for (PS4-Pro) with 2GB VRAM (PSXita)'" onmouseout="msgs.innerHTML='PS4 9.00 FW Host v3.0 by GamerHack'" onclick="load_linuxPS4Pro2gb()"> Linux 2GB (PS4-Pro) </button>
-<button class="btn" onmouseover="msgs.innerHTML='Load Linux for (PS4-Pro) with 3GB VRAM (PSXita)'" onmouseout="msgs.innerHTML='PS4 9.00 FW Host v3.0 by GamerHack'" onclick="load_linuxPS4Pro3gb()"> Linux 3GB (PS4-Pro) </button>
-<button class="btn" onmouseover="msgs.innerHTML='Load Linux for (PS4-Pro) with 4GB VRAM (PSXita)'" onmouseout="msgs.innerHTML='PS4 9.00 FW Host v3.0 by GamerHack'" onclick="load_linuxPS4Pro4gb()"> Linux 4GB (PS4-Pro) </button>
-<br>
-<button class="btn" onmouseover="msgs.innerHTML='Return to Main Menu'" onmouseout="msgs.innerHTML='PS4 9.00 FW Host v3.0 by GamerHack'" onclick="load_menu()" style="margin-bottom: 241px"> Return </button>
-</div>
-<div id="mods">
-<h1 style="font-size: 18px;color: yellow;">Online Payloads</h1>
-<button class="btn" onmouseover="msgs.innerHTML='GTA V Mod - Arabic Guy v1.00 (L1 + R1)'" onmouseout="msgs.innerHTML='PS4 9.00 FW Host v3.0 by GamerHack'" onclick="load_arabicGuy100()"> Arabic Guy v1.00 </button>
-<button class="btn" onmouseover="msgs.innerHTML='GTA V Mod - Arabic Guy v1.27 (L1 + R1)'" onmouseout="msgs.innerHTML='PS4 9.00 FW Host v3.0 by GamerHack'" onclick="load_arabicGuy127()"> Arabic Guy v1.27 </button>
-<button class="btn" onmouseover="msgs.innerHTML='GTA V Mod - Arabic Guy v1.32 (L1 + R1)'" onmouseout="msgs.innerHTML='PS4 9.00 FW Host v3.0 by GamerHack'" onclick="load_arabicGuy132()"> Arabic Guy v1.32 </button>
-<button class="btn" onmouseover="msgs.innerHTML='GTA V Mod - Arabic Guy v1.33 (L1 + R1)'" onmouseout="msgs.innerHTML='PS4 9.00 FW Host v3.0 by GamerHack'" onclick="load_arabicGuy133()"> Arabic Guy v1.33 </button>
-<button class="btn" onmouseover="msgs.innerHTML='GTA V Mod - Expulsion v4.0 - 1.38'" onmouseout="msgs.innerHTML='PS4 9.00 FW Host v3.0 by GamerHack'" onclick="load_Expulsion()"> Expulsion v4.0 - 1.38 </button>
-<button class="btn" onmouseover="msgs.innerHTML='GTA V Mod - Lamance v0.9 - 1.38 (Right + Square)'" onmouseout="msgs.innerHTML='PS4 9.00 FW Host v3.0 by GamerHack'" onclick="load_Lamance()"> Lamance v0.9 - 1.38 </button>
-<br>
-<button class="btn" onmouseover="msgs.innerHTML='GTA V Mod - WildeModz-1.32'" onmouseout="msgs.innerHTML='PS4 9.00 FW Host v3.0 by GamerHack'" onclick="load_WildeModz132()"> WildeModz-1.32 </button>
-<button class="btn" onmouseover="msgs.innerHTML='GTA V Mod - WildeModz-1.33'" onmouseout="msgs.innerHTML='PS4 9.00 FW Host v3.0 by GamerHack'" onclick="load_WildeModz133()"> WildeModz-1.33 </button>
-<button class="btn" onmouseover="msgs.innerHTML='GTA V Mod - WildeModz-1.38'" onmouseout="msgs.innerHTML='PS4 9.00 FW Host v3.0 by GamerHack'" onclick="load_WildeModz138()"> WildeModz-1.38 </button>
-<button class="btn" onmouseover="msgs.innerHTML='GTA V Mod - WildeModz-1.46'" onmouseout="msgs.innerHTML='PS4 9.00 FW Host v3.0 by GamerHack'" onclick="load_WildeModz146()"> WildeModz-1.46 </button>
-<button class="btn" onmouseover="msgs.innerHTML='GTA V Mod - WildeModz-1.47'" onmouseout="msgs.innerHTML='PS4 9.00 FW Host v3.0 by GamerHack'" onclick="load_WildeModz147()"> WildeModz-1.47 </button>
-<br>
-<button class="btn" onmouseover="msgs.innerHTML='GTA V Mod - Beef Queef Mod v1.33'" onmouseout="msgs.innerHTML='PS4 9.00 FW Host v3.0 by GamerHack'" onclick="load_beefQueef133()"> Beef Queef Mod v1.33 </button>
-<button class="btn" onmouseover="msgs.innerHTML='GTA V Mod - Beef Queef Mod v1.34'" onmouseout="msgs.innerHTML='PS4 9.00 FW Host v3.0 by GamerHack'" onclick="load_beefQueef134()"> Beef Queef Mod v1.34 </button>
-<button class="btn" onmouseover="msgs.innerHTML='GTA V Mod - Beef Queef Mod v1.38d'" onmouseout="msgs.innerHTML='PS4 9.00 FW Host v3.0 by GamerHack'" onclick="load_beefQueef138()"> Beef Queef Mod v1.38d </button>
-<button class="btn" onmouseover="msgs.innerHTML='GTA V Mod - Beef Queef Mod v1.47'" onmouseout="msgs.innerHTML='PS4 9.00 FW Host v3.0 by GamerHack'" onclick="load_beefQueef147()"> Beef Queef Mod v1.47 </button>
-<br>
-<button class="btn" onmouseover="msgs.innerHTML='Red Dead Redemption 2 Mod - Oysters Menu v1.00'" onmouseout="msgs.innerHTML='PS4 9.00 FW Host v3.0 by GamerHack'" onclick="load_Oysters100()"> RDR2 v1.00 </button>
-<button class="btn" onmouseover="msgs.innerHTML='Red Dead Redemption 2 Mod - Oysters Menu v1.13'" onmouseout="msgs.innerHTML='PS4 9.00 FW Host v3.0 by GamerHack'" onclick="load_Oysters113()"> RDR2 v1.13 </button>
-<button class="btn" onmouseover="msgs.innerHTML='Red Dead Redemption 2 Mod - Oysters Menu v1.19'" onmouseout="msgs.innerHTML='PS4 9.00 FW Host v3.0 by GamerHack'" onclick="load_Oysters119()"> RDR2 v1.19 </button>
-<button class="btn" onmouseover="msgs.innerHTML='Red Dead Redemption 2 Mod - Oysters Menu v1.24'" onmouseout="msgs.innerHTML='PS4 9.00 FW Host v3.0 by GamerHack'" onclick="load_Oysters124()"> RDR2 v1.24 </button>
-<button class="btn" onmouseover="msgs.innerHTML='Red Dead Redemption 2 Mod - Oysters Menu v1.29'" onmouseout="msgs.innerHTML='PS4 9.00 FW Host v3.0 by GamerHack'" onclick="load_Oysters129()"> RDR2 v1.29 </button>
-<br>
-<button class="btn" onmouseover="msgs.innerHTML='Return to Main Menu'" onmouseout="msgs.innerHTML='PS4 9.00 FW Host v3.0 by GamerHack'" onclick="load_menu()" style="margin-bottom: 179px"> Return </button>
-</div>
-<br>
-<h1 style="margin-top: 22px;">Special Thanks to:<a href="https://twitter.com/sleirsgoevy" style="color: #f31414;margin-left: 10px;margin-right: 10px;">@sleirsgoevy</a>ChendoChap<a href="https://twitter.com/Znullptr" style="color: #f31414;margin-left: 10px;margin-right: 10px;">@Znullptr</a>SiSTR0</h1>
+
 <script>
 function jbdone(){
 document.getElementById("menu").style.display = "block";
@@ -223,7 +317,6 @@ function load_binloader(){
     chain.syscall(74, payload_loader, 0x4000, (0x1 | 0x2 | 0x4));
 
     var pthread = p.malloc(0x10);
-    //
     {
         chain.fcall(window.syscalls[203], payload_buffer, 0x300000);
         chain.fcall(libKernelBase.add32(OFFSET_lk_pthread_create), pthread, 0x0, payload_loader, payload_buffer);
@@ -347,275 +440,62 @@ setTimeout(loadScript("netcat.js")
 +loadScript('relocator.js'),1500);
 }
 
-function load_goldhenbeta(){
-LoadedMSG = "GoldHEN v2.4b18.12 Loaded ...";
-PLfile = "goldhen_2.4b18.12.bin";
-load_poc();
-}
+function load_goldhenbeta(){LoadedMSG = "GoldHEN v2.4b18.12 Loaded ...";PLfile = "goldhen_2.4b18.12.bin";load_poc();}
+function load_goldhen23(){LoadedMSG = "GoldHEN v2.3 Loaded ...";PLfile = "goldhen_2.3.bin";load_poc();}
+function load_Gdumper(){LoadedMSG = "Game-Dumper Loaded ...";PLfile = "dumperG.bin";load_poc();}
+function load_Udumper(){LoadedMSG = "Update-Dumper Loaded ...";PLfile = "dumperU.bin";load_poc();}
+function load_SGUdumper(){LoadedMSG = "Separate Game and Update Dumper Loaded ...";PLfile = "dumperSGU.bin";load_poc();}
+function load_MGUdumper(){LoadedMSG = "Merged Game and Update Dumper Loaded ...";PLfile = "dumperMGU.bin";load_poc();}
+function load_todex(){LoadedMSG = "ToDex Loaded ...";PLfile = "todex.bin";load_poc();}
+function load_ftp(){LoadedMSG = "FTP Loaded ...";PLfile = "ftp.bin";load_poc();}
+function load_app2usb(){LoadedMSG = "App2USB Loaded ...";PLfile = "app2usb.bin";load_poc();}
+function load_dbackup(){LoadedMSG = "DB Backup Loaded ...";PLfile = "backup.bin";load_poc();}
+function load_dbrestore(){LoadedMSG = "DB Restore Loaded ...";PLfile = "restore.bin";load_poc();}
+function load_enablebUpdates(){LoadedMSG = "Enable Updates Loaded ...";PLfile = "enable-updates.bin";load_poc();}
+function load_disableUpdates(){LoadedMSG = "Disable Updates Loaded ...";PLfile = "disable-updates.bin";load_poc();}
+function load_historyBlocker(){LoadedMSG = "History Blocker Loaded ...";PLfile = "history-blocker.bin";load_poc();}
+function load_kernelDump(){LoadedMSG = "Kernel Dumper Loaded ...";PLfile = "kernel-dumper.bin";load_poc();}
+function load_moduleDump(){LoadedMSG = "Module Dumper Loaded ...";PLfile = "module-dumper.bin";load_poc();}
+function load_ps4debug(){LoadedMSG = "PS4 Debug Loaded ...";PLfile = "ps4debug.bin";load_poc();}
+function load_disbAslr(){LoadedMSG = "Disable ASLR Loaded ...";PLfile = "disable-aslr.bin";load_poc();}
+function load_exitidu(){LoadedMSG = "Exit IDU Loaded ...";PLfile = "exit-idu.bin";load_poc();}
+function load_rifRen(){LoadedMSG = "RIF Renamer Loaded ...";PLfile = "rif-renamer.bin";load_poc();}
+function load_permUart(){LoadedMSG = "Permanent UART Loaded ...";PLfile = "permanent-uart.bin";load_poc();}
+function load_webrte(){LoadedMSG = "WebRTE Loaded ...";PLfile = "webrte.bin";load_poc();}
+function load_toolbox(){LoadedMSG = "Orbis-Toolbox Loaded ...";PLfile = "Orbis-Toolbox-900.bin";load_poc();}
+function load_fanthreshold(){LoadedMSG="Fan Threshold Loaded ...";PLfile = "fan-threshold"+tempC.value+".bin";load_poc();}
+function load_southbridge(){LoadedMSG = "Payload Loaded ...";PLfile = "southbridge.bin";load_poc();}
+function load_arabicGuy100(){LoadedMSG = "Arabic Guy v1.00 Loaded ...";PLfile = "arabic-guy100.bin";load_poc();}
+function load_arabicGuy127(){LoadedMSG = "Arabic Guy v1.27 Loaded ...";PLfile = "arabic-guy127.bin";load_poc();}
+function load_arabicGuy132(){LoadedMSG = "Arabic Guy v1.32 Loaded ...";PLfile = "arabic-guy132.bin";load_poc();}
+function load_arabicGuy133(){LoadedMSG = "Arabic Guy v1.33 Loaded ...";PLfile = "arabic-guy133.bin";load_poc();}
+function load_Expulsion(){LoadedMSG = "Expulsion v4.0 Loaded ...";PLfile = "Expulsion-V4.0-1.38.bin";load_poc();}
+function load_Lamance(){LoadedMSG = "Lamance v0.9 Loaded ...";PLfile = "Lamance-v0.9-1.38.bin";load_poc();}
+function load_WildeModz132(){LoadedMSG = "WildeModz-1.32 Loaded ...";PLfile = "WildeModz-1.32.bin";load_poc();}
+function load_WildeModz133(){LoadedMSG = "WildeModz-1.33 Loaded ...";PLfile = "WildeModz-1.33.bin";load_poc();}
+function load_WildeModz138(){LoadedMSG = "WildeModz-1.38 Loaded ...";PLfile = "WildeModz-1.38.bin";load_poc();}
+function load_WildeModz146(){LoadedMSG = "WildeModz-1.46 Loaded ...";PLfile = "WildeModz-1.46.bin";load_poc();}
+function load_WildeModz147(){LoadedMSG = "WildeModz-1.47 Loaded ...";PLfile = "WildeModz-1.47.bin";load_poc();}
+function load_beefQueef133(){LoadedMSG = "Beef Queef Mod v1.33 Loaded ...";PLfile = "BeefQueefMod-133.bin";load_poc();}
+function load_beefQueef134(){LoadedMSG = "Beef Queef Mod v1.34 Loaded ...";PLfile = "BeefQueefMod-134.bin";load_poc();}
+function load_beefQueef138(){LoadedMSG = "Beef Queef Mod v1.38d Loaded ...";PLfile = "BeefQueefMod-138d.bin";load_poc();}
+function load_beefQueef147(){LoadedMSG = "Beef Queef Mod v1.47 Loaded ...";PLfile = "BeefQueefMod-Unified-147e.bin";load_poc();}
+function load_Oysters100(){LoadedMSG = "Oysters Menu v1.00 Loaded ...";PLfile = "OystersMenu-v1.00.bin";load_poc();}
+function load_Oysters113(){LoadedMSG = "Oysters Menu v1.13 Loaded ...";PLfile = "OystersMenu-v1.13.bin";load_poc();}
+function load_Oysters119(){LoadedMSG = "Oysters Menu v1.19 Loaded ...";PLfile = "OystersMenu-v1.19.bin";load_poc();}
+function load_Oysters124(){LoadedMSG = "Oysters Menu v1.24 Loaded ...";PLfile = "OystersMenu-v1.24.bin";load_poc();}
+function load_Oysters129(){LoadedMSG = "Oysters Menu v1.29 Loaded ...";PLfile = "OystersMenu-v1.29.bin";load_poc();}
+</script>
 
-function load_goldhen23(){
-LoadedMSG = "GoldHEN v2.3 Loaded ...";
-PLfile = "goldhen_2.3.bin";
-load_poc();
-}
-
-function load_Gdumper(){
-LoadedMSG = "Game-Dumper Loaded ...";
-PLfile = "dumperG.bin";
-load_poc();
-}
-
-function load_Udumper(){
-LoadedMSG = "Update-Dumper Loaded ...";
-PLfile = "dumperU.bin";
-load_poc();
-}
-
-function load_SGUdumper(){
-LoadedMSG = "Separate Game and Update Dumper Loaded ...";
-PLfile = "dumperSGU.bin";
-load_poc();
-}
-
-function load_MGUdumper(){
-LoadedMSG = "Merged Game and Update Dumper Loaded ...";
-PLfile = "dumperMGU.bin";
-load_poc();
-}
-
-function load_todex(){
-LoadedMSG = "ToDex Loaded ...";
-PLfile = "todex.bin";
-load_poc();
-}
-
-function load_ftp(){
-LoadedMSG = "FTP Loaded ..."
-PLfile = "ftp.bin";
-load_poc();
-}
-
-function load_app2usb(){
-LoadedMSG = "App2USB Loaded ..."
-PLfile = "app2usb.bin";
-load_poc();
-}
-
-function load_dbackup(){
-LoadedMSG = "DB Backup Loaded ..."
-PLfile = "backup.bin";
-load_poc();
-}
-
-function load_dbrestore(){
-LoadedMSG = "DB Restore Loaded ..."
-PLfile = "restore.bin";
-load_poc();
-}
-
-function load_enablebUpdates(){
-LoadedMSG = "Enable Updates Loaded ..."
-PLfile = "enable-updates.bin";
-load_poc();
-}
-
-function load_disableUpdates(){
-LoadedMSG = "Disable Updates Loaded ..."
-PLfile = "disable-updates.bin";
-load_poc();
-}
-
-function load_historyBlocker(){
-LoadedMSG = "History Blocker Loaded ..."
-PLfile = "history-blocker.bin";
-load_poc();
-}
-
-function load_kernelDump(){
-LoadedMSG = "Kernel Dumper Loaded ..."
-PLfile = "kernel-dumper.bin";
-load_poc();
-}
-
-function load_moduleDump(){
-LoadedMSG = "Module Dumper Loaded ..."
-PLfile = "module-dumper.bin";
-load_poc();
-}
-
-function load_ps4debug(){
-LoadedMSG = "PS4 Debug Loaded ..."
-PLfile = "ps4debug.bin";
-load_poc();
-}
-
-function load_disbAslr(){
-LoadedMSG = "Disable ASLR Loaded ..."
-PLfile = "disable-aslr.bin";
-load_poc();
-}
-
-function load_exitidu(){
-LoadedMSG = "Exit IDU Loaded ..."
-PLfile = "exit-idu.bin";
-load_poc();
-}
-
-function load_rifRen(){
-LoadedMSG = "RIF Renamer Loaded ..."
-PLfile = "rif-renamer.bin";
-load_poc();
-}
-
-function load_permUart(){
-LoadedMSG = "Permanent UART Loaded ..."
-PLfile = "permanent-uart.bin";
-load_poc();
-}
-
-function load_webrte(){
-LoadedMSG = "WebRTE Loaded ..."
-PLfile = "webrte.bin";
-load_poc();
-}
-
-function load_toolbox(){
-LoadedMSG = "Orbis-Toolbox Loaded ..."
-PLfile = "Orbis-Toolbox-900.bin";
-load_poc();
-}
-
-function load_fanthreshold(){
-LoadedMSG="Fan Threshold Loaded ..."
-PLfile = "fan-threshold"+tempC.value+".bin";
-load_poc();
-}
-
-function load_southbridge(){
-LoadedMSG = "Payload Loaded ..."
-PLfile = "southbridge.bin";
-load_poc();
-}
-
-function load_arabicGuy100(){
-LoadedMSG = "Arabic Guy v1.00 Loaded ..."
-PLfile = "arabic-guy100.bin";
-load_poc();
-}
-
-function load_arabicGuy127(){
-LoadedMSG = "Arabic Guy v1.27 Loaded ..."
-PLfile = "arabic-guy127.bin";
-load_poc();
-}
-
-function load_arabicGuy132(){
-LoadedMSG = "Arabic Guy v1.32 Loaded ..."
-PLfile = "arabic-guy132.bin";
-load_poc();
-}
-
-function load_arabicGuy133(){
-LoadedMSG = "Arabic Guy v1.33 Loaded ..."
-PLfile = "arabic-guy133.bin";
-load_poc();
-}
-
-function load_Expulsion(){
-LoadedMSG = "Expulsion v4.0 Loaded ..."
-PLfile = "Expulsion-V4.0-1.38.bin";
-load_poc();
-}
-
-function load_Lamance(){
-LoadedMSG = "Lamance v0.9 Loaded ..."
-PLfile = "Lamance-v0.9-1.38.bin";
-load_poc();
-}
-
-function load_WildeModz132(){
-LoadedMSG = "WildeModz-1.32 Loaded ..."
-PLfile = "WildeModz-1.32.bin";
-load_poc();
-}
-
-function load_WildeModz133(){
-LoadedMSG = "WildeModz-1.33 Loaded ..."
-PLfile = "WildeModz-1.33.bin";
-load_poc();
-}
-
-function load_WildeModz138(){
-LoadedMSG = "WildeModz-1.38 Loaded ..."
-PLfile = "WildeModz-1.38.bin";
-load_poc();
-}
-
-function load_WildeModz146(){
-LoadedMSG = "WildeModz-1.46 Loaded ..."
-PLfile = "WildeModz-1.46.bin";
-load_poc();
-}
-
-function load_WildeModz147(){
-LoadedMSG = "WildeModz-1.47 Loaded ..."
-PLfile = "WildeModz-1.47.bin";
-load_poc();
-}
-
-function load_beefQueef133(){
-LoadedMSG = "Beef Queef Mod v1.33 Loaded ..."
-PLfile = "BeefQueefMod-133.bin";
-load_poc();
-}
-
-function load_beefQueef134(){
-LoadedMSG = "Beef Queef Mod v1.34 Loaded ..."
-PLfile = "BeefQueefMod-134.bin";
-load_poc();
-}
-
-function load_beefQueef138(){
-LoadedMSG = "Beef Queef Mod v1.38d Loaded ..."
-PLfile = "BeefQueefMod-138d.bin";
-load_poc();
-}
-
-function load_beefQueef147(){
-LoadedMSG = "Beef Queef Mod v1.47 Loaded ..."
-PLfile = "BeefQueefMod-Unified-147e.bin";
-load_poc();
-}
-
-function load_Oysters100(){
-LoadedMSG = "Oysters Menu v1.00 Loaded ..."
-PLfile = "OystersMenu-v1.00.bin";
-load_poc();
-}
-
-function load_Oysters113(){
-LoadedMSG = "Oysters Menu v1.13 Loaded ..."
-PLfile = "OystersMenu-v1.13.bin";
-load_poc();
-}
-
-function load_Oysters119(){
-LoadedMSG = "Oysters Menu v1.19 Loaded ..."
-PLfile = "OystersMenu-v1.19.bin";
-load_poc();
-}
-
-function load_Oysters124(){
-LoadedMSG = "Oysters Menu v1.24 Loaded ..."
-PLfile = "OystersMenu-v1.24.bin";
-load_poc();
-}
-
-function load_Oysters129(){
-LoadedMSG = "Oysters Menu v1.29 Loaded ..."
-PLfile = "OystersMenu-v1.29.bin";
-load_poc();
+<script>
+const container=document.getElementById('particles');
+for(let i=0;i<30;i++){
+  const p=document.createElement('div');
+  p.className='particle';
+  p.style.cssText=`left:${Math.random()*100}%;width:${Math.random()*3+1}px;height:${Math.random()*3+1}px;animation-duration:${Math.random()*15+10}s;animation-delay:${Math.random()*12}s;`;
+  container.appendChild(p);
 }
 </script>
+
 </body>
 </html>
