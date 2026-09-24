@@ -1,8 +1,9 @@
-CACHE MANIFEST 
+CACHE MANIFEST
 
-CACHE: 
+CACHE:
 ../img.jpg
 ../style.css
+cache.css
 goldhen_2.4b18.12.bin
 index.html
 700\alert.js
@@ -33,5 +34,5 @@ index.html
 700\rop\800.js
 700\rop\850.js
 
-NETWORK: 
-* 
+NETWORK:
+*
