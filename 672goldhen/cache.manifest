@@ -1,8 +1,13 @@
-CACHE MANIFEST 
+CACHE MANIFEST
 
+CACHE:
 ../img.jpg
-../style.css 
+../style.css
+cache.css
 exp_loader.js
 goldhen_2.4b18.12.bin
 index.html
 jb.js
+
+NETWORK:
+*
